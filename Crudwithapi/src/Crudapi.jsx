@@ -31,7 +31,7 @@ export const Crudapi = () => {
         Add Employee
       </Button>
       <ApiForm handleclose={handleclose} open={open} set={set} />
-      <DisplayApi handleopen={handleopen} open={open} />
+      <DisplayApi handleopen={handleclose} open={open} />
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
+import React, { useEffect, useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
 
 export const ApiForm = (props) => {
-  const { open, handleclose, set } = props;
+  const { open, handleclose, test } = props;
 
   const [data, setdata] = useState({
     firstname: "",
@@ -16,7 +16,7 @@ export const ApiForm = (props) => {
   });
 
   useEffect(() => {
-    if (set) {
+    if (test) {
       setdata({
         ...set,
         firstname: set.firstname,
@@ -25,11 +25,11 @@ export const ApiForm = (props) => {
         contactnumber: set.contactnumber,
       });
     }
-  }, [set]);
+  }, [test]);
 
   const handlesave = () => {
-    let method = set ? "PUT" : "POST";
-    let url = set
+    let method = test ? "PUT" : "POST";
+    let url = test
       ? `https://6637086d288fedf6937f3dd8.mockapi.io/employee/employee/${data.id}`
       : "https://6637086d288fedf6937f3dd8.mockapi.io/employee/employee";
     fetch(url, {
@@ -92,7 +92,7 @@ export const ApiForm = (props) => {
           variant="standard"
           onChange={handlechange}
         />
-         <TextField
+        <TextField
           autoFocus
           required
           margin="dense"
@@ -105,7 +105,7 @@ export const ApiForm = (props) => {
           variant="standard"
           onChange={handlechange}
         />
-          <TextField
+        <TextField
           autoFocus
           required
           margin="dense"

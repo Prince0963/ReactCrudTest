@@ -13,7 +13,7 @@ export const DisplayApi = (props) => {
     fetch(
       "https://6637086d288fedf6937f3dd8.mockapi.io/employee/employee" + id,
       {
-        method: "DELETE",
+        method: "Delete",
       }
     )
       .then((y) => {
